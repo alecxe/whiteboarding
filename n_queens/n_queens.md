@@ -1,9 +1,10 @@
 
-## Eight Queens Puzzle
+## N Queens Puzzle
 
 https://en.wikipedia.org/wiki/Eight_queens_puzzle
 
 Resources used:
+ * https://leetcode.com/problems/n-queens/
  * http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.51.7113&rep=rep1&type=pdf
  * http://gregtrowbridge.com/a-bitwise-solution-to-the-n-queens-problem-in-javascript/
  * https://codereview.stackexchange.com/questions/159946/n-queens-bitwise-approach
@@ -187,17 +188,17 @@ n, y = zip(*time1)
 pred1 = expfit(n, y)
 ```
 
-    exp(a): 4.544137
-    b: -18.535040439311505
-     6: 0.000118  pred: 0.000079
-     7: 0.000378  pred: 0.000357
-     8: 0.001388  pred: 0.001622
-     9: 0.005692  pred: 0.007369
-    10: 0.026315  pred: 0.033485
-    11: 0.127757  pred: 0.152160
-    12: 0.671756  pred: 0.691435
-    13: 3.434624  pred: 3.141973
-    14: 19.311666  pred: 14.277557
+    exp(a): 4.488282
+    b: -18.441098792533825
+     6: 0.000133  pred: 0.000080
+     7: 0.000372  pred: 0.000359
+     8: 0.001427  pred: 0.001614
+     9: 0.005597  pred: 0.007242
+    10: 0.023545  pred: 0.032504
+    11: 0.110675  pred: 0.145886
+    12: 0.575009  pred: 0.654778
+    13: 3.259046  pred: 2.938827
+    14: 20.973890  pred: 13.190282
 
 
 
@@ -207,17 +208,17 @@ n, y = zip(*time2)
 pred2 = expfit(n, y)
 ```
 
-    exp(a): 4.507508
-    b: -18.5925765246813
-     6: 0.000117  pred: 0.000071
-     7: 0.000332  pred: 0.000318
-     8: 0.001186  pred: 0.001435
-     9: 0.004898  pred: 0.006468
-    10: 0.022646  pred: 0.029155
-    11: 0.107288  pred: 0.131416
-    12: 0.524052  pred: 0.592359
-    13: 2.898864  pred: 2.670062
-    14: 18.310329  pred: 12.035328
+    exp(a): 4.405335
+    b: -18.336709104399876
+     6: 0.000134  pred: 0.000079
+     7: 0.000349  pred: 0.000350
+     8: 0.001390  pred: 0.001543
+     9: 0.005371  pred: 0.006796
+    10: 0.021471  pred: 0.029940
+    11: 0.099647  pred: 0.131897
+    12: 0.516172  pred: 0.581053
+    13: 2.795938  pred: 2.559731
+    14: 18.004045  pred: 11.276473
 
 
 
@@ -232,7 +233,7 @@ plot_timings(('init', pred1), ('improved', pred2))
 
 
 
-  <div class="bk-root" id="31c3c16d-04dd-44d7-bab8-8eceb26dab0a" data-root-id="1003"></div>
+  <div class="bk-root" id="8c42af49-e392-4310-8a86-8fb11b4f0804" data-root-id="1003"></div>
 
 
 

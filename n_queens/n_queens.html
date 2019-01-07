@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>8_queens</title>
+<title>n_queens</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13116,7 +13116,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Eight-Queens-Puzzle">Eight Queens Puzzle<a class="anchor-link" href="#Eight-Queens-Puzzle">&#182;</a></h2><p><a href="https://en.wikipedia.org/wiki/Eight_queens_puzzle">https://en.wikipedia.org/wiki/Eight_queens_puzzle</a></p>
+<h2 id="N-Queens-Puzzle">N Queens Puzzle<a class="anchor-link" href="#N-Queens-Puzzle">&#182;</a></h2><p><a href="https://en.wikipedia.org/wiki/Eight_queens_puzzle">https://en.wikipedia.org/wiki/Eight_queens_puzzle</a></p>
 
 </div>
 </div>
@@ -13126,6 +13126,7 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Resources used:</p>
 <ul>
+<li><a href="https://leetcode.com/problems/n-queens/">https://leetcode.com/problems/n-queens/</a></li>
 <li><a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.51.7113&amp;rep=rep1&amp;type=pdf">http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.51.7113&amp;rep=rep1&amp;type=pdf</a></li>
 <li><a href="http://gregtrowbridge.com/a-bitwise-solution-to-the-n-queens-problem-in-javascript/">http://gregtrowbridge.com/a-bitwise-solution-to-the-n-queens-problem-in-javascript/</a></li>
 <li><a href="https://codereview.stackexchange.com/questions/159946/n-queens-bitwise-approach">https://codereview.stackexchange.com/questions/159946/n-queens-bitwise-approach</a></li>
@@ -13143,7 +13144,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">timeit</span>
@@ -13174,7 +13175,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -13199,7 +13200,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="k">import</span> <span class="n">figure</span><span class="p">,</span> <span class="n">output_notebook</span><span class="p">,</span> <span class="n">show</span>
@@ -13267,10 +13268,10 @@ div#notebook {
 
 
 
-<div id="84071460-6fc3-4c85-84c5-1a1056a78ed1"></div>
+<div id="8c0484da-0ff4-44e0-82e4-5681e89bf2d6"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#84071460-6fc3-4c85-84c5-1a1056a78ed1');
+var element = $('#8c0484da-0ff4-44e0-82e4-5681e89bf2d6');
 
 (function(root) {
   function now() {
@@ -13567,7 +13568,7 @@ The idea is to use a set of bit manipulation "tricks" to keep track of the inter
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># initial implementation</span>
@@ -13601,7 +13602,7 @@ The idea is to use a set of bit manipulation "tricks" to keep track of the inter
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">initial_bitwise</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
@@ -13617,7 +13618,7 @@ The idea is to use a set of bit manipulation "tricks" to keep track of the inter
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[6]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -13634,7 +13635,7 @@ The idea is to use a set of bit manipulation "tricks" to keep track of the inter
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># applying a few suggestions from the codereview.SE</span>
@@ -13670,7 +13671,7 @@ The idea is to use a set of bit manipulation "tricks" to keep track of the inter
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">improved_bitwise</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
@@ -13686,7 +13687,7 @@ The idea is to use a set of bit manipulation "tricks" to keep track of the inter
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[9]:</div>
+    <div class="prompt output_prompt">Out[7]:</div>
 
 
 
@@ -13703,7 +13704,7 @@ The idea is to use a set of bit manipulation "tricks" to keep track of the inter
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">time1</span> <span class="o">=</span> <span class="n">timings</span><span class="p">(</span><span class="n">initial_bitwise</span><span class="p">)</span>
@@ -13725,17 +13726,17 @@ The idea is to use a set of bit manipulation "tricks" to keep track of the inter
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>exp(a): 4.544137
-b: -18.535040439311505
- 6: 0.000118  pred: 0.000079
- 7: 0.000378  pred: 0.000357
- 8: 0.001388  pred: 0.001622
- 9: 0.005692  pred: 0.007369
-10: 0.026315  pred: 0.033485
-11: 0.127757  pred: 0.152160
-12: 0.671756  pred: 0.691435
-13: 3.434624  pred: 3.141973
-14: 19.311666  pred: 14.277557
+<pre>exp(a): 4.488282
+b: -18.441098792533825
+ 6: 0.000133  pred: 0.000080
+ 7: 0.000372  pred: 0.000359
+ 8: 0.001427  pred: 0.001614
+ 9: 0.005597  pred: 0.007242
+10: 0.023545  pred: 0.032504
+11: 0.110675  pred: 0.145886
+12: 0.575009  pred: 0.654778
+13: 3.259046  pred: 2.938827
+14: 20.973890  pred: 13.190282
 </pre>
 </div>
 </div>
@@ -13746,7 +13747,7 @@ b: -18.535040439311505
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">time2</span> <span class="o">=</span> <span class="n">timings</span><span class="p">(</span><span class="n">improved_bitwise</span><span class="p">)</span>
@@ -13768,17 +13769,17 @@ b: -18.535040439311505
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>exp(a): 4.507508
-b: -18.5925765246813
- 6: 0.000117  pred: 0.000071
- 7: 0.000332  pred: 0.000318
- 8: 0.001186  pred: 0.001435
- 9: 0.004898  pred: 0.006468
-10: 0.022646  pred: 0.029155
-11: 0.107288  pred: 0.131416
-12: 0.524052  pred: 0.592359
-13: 2.898864  pred: 2.670062
-14: 18.310329  pred: 12.035328
+<pre>exp(a): 4.405335
+b: -18.336709104399876
+ 6: 0.000134  pred: 0.000079
+ 7: 0.000349  pred: 0.000350
+ 8: 0.001390  pred: 0.001543
+ 9: 0.005371  pred: 0.006796
+10: 0.021471  pred: 0.029940
+11: 0.099647  pred: 0.131897
+12: 0.516172  pred: 0.581053
+13: 2.795938  pred: 2.559731
+14: 18.004045  pred: 11.276473
 </pre>
 </div>
 </div>
@@ -13789,7 +13790,7 @@ b: -18.5925765246813
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">plot_timings</span><span class="p">((</span><span class="s1">&#39;init&#39;</span><span class="p">,</span> <span class="n">pred1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;improved&#39;</span><span class="p">,</span> <span class="n">pred2</span><span class="p">))</span>
@@ -13816,7 +13817,7 @@ b: -18.5925765246813
 
 
 
-  <div class="bk-root" id="31c3c16d-04dd-44d7-bab8-8eceb26dab0a" data-root-id="1003"></div>
+  <div class="bk-root" id="8c42af49-e392-4310-8a86-8fb11b4f0804" data-root-id="1003"></div>
 
 </div>
 
@@ -13830,15 +13831,15 @@ b: -18.5925765246813
 
 
 
-<div id="4b7e9478-7acb-49e0-8696-ea0cfbc32e0f"></div>
+<div id="2dd125a8-5fc7-4de3-93c4-66dec78f21d1"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#4b7e9478-7acb-49e0-8696-ea0cfbc32e0f');
+var element = $('#2dd125a8-5fc7-4de3-93c4-66dec78f21d1');
 (function(root) {
   function embed_document(root) {
     
-  var docs_json = {"8d8a5ed3-0490-49fe-a4df-0ebe3e5fa0d9":{"roots":{"references":[{"attributes":{"below":[{"id":"1013","type":"LinearAxis"}],"left":[{"id":"1018","type":"LogAxis"}],"renderers":[{"id":"1013","type":"LinearAxis"},{"id":"1017","type":"Grid"},{"id":"1018","type":"LogAxis"},{"id":"1022","type":"Grid"},{"id":"1031","type":"BoxAnnotation"},{"id":"1049","type":"Legend"},{"id":"1041","type":"GlyphRenderer"},{"id":"1054","type":"GlyphRenderer"},{"id":"1068","type":"GlyphRenderer"},{"id":"1084","type":"GlyphRenderer"}],"title":{"id":"1002","type":"Title"},"toolbar":{"id":"1029","type":"Toolbar"},"x_range":{"id":"1005","type":"DataRange1d"},"x_scale":{"id":"1009","type":"LinearScale"},"y_range":{"id":"1007","type":"DataRange1d"},"y_scale":{"id":"1011","type":"LogScale"}},"id":"1003","subtype":"Figure","type":"Plot"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"1023","type":"PanTool"},{"id":"1024","type":"WheelZoomTool"},{"id":"1025","type":"BoxZoomTool"},{"id":"1026","type":"SaveTool"},{"id":"1027","type":"ResetTool"},{"id":"1028","type":"HelpTool"}]},"id":"1029","type":"Toolbar"},{"attributes":{"data_source":{"id":"1081","type":"ColumnDataSource"},"glyph":{"id":"1082","type":"Line"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"1083","type":"Line"},"selection_glyph":null,"view":{"id":"1085","type":"CDSView"}},"id":"1084","type":"GlyphRenderer"},{"attributes":{},"id":"1026","type":"SaveTool"},{"attributes":{},"id":"1110","type":"UnionRenderers"},{"attributes":{"axis_label":"time (sec)","formatter":{"id":"1047","type":"LogTickFormatter"},"plot":{"id":"1003","subtype":"Figure","type":"Plot"},"ticker":{"id":"1019","type":"LogTicker"}},"id":"1018","type":"LogAxis"},{"attributes":{"axis_label":"N","formatter":{"id":"1045","type":"BasicTickFormatter"},"plot":{"id":"1003","subtype":"Figure","type":"Plot"},"ticker":{"id":"1014","type":"BasicTicker"}},"id":"1013","type":"LinearAxis"},{"attributes":{"source":{"id":"1065","type":"ColumnDataSource"}},"id":"1069","type":"CDSView"},{"attributes":{"num_minor_ticks":10},"id":"1019","type":"LogTicker"},{"attributes":{},"id":"1024","type":"WheelZoomTool"},{"attributes":{"plot":{"id":"1003","subtype":"Figure","type":"Plot"},"ticker":{"id":"1014","type":"BasicTicker"}},"id":"1017","type":"Grid"},{"attributes":{},"id":"1077","type":"UnionRenderers"},{"attributes":{"ticker":null},"id":"1047","type":"LogTickFormatter"},{"attributes":{},"id":"1078","type":"Selection"},{"attributes":{},"id":"1028","type":"HelpTool"},{"attributes":{"line_alpha":0.1,"line_color":"#1f77b4","x":{"field":"x"},"y":{"field":"y"}},"id":"1053","type":"Line"},{"attributes":{"line_alpha":0.1,"line_color":"#1f77b4","x":{"field":"x"},"y":{"field":"y"}},"id":"1083","type":"Line"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"1031","type":"BoxAnnotation"},{"attributes":{"line_color":"#ffbb78","x":{"field":"x"},"y":{"field":"y"}},"id":"1082","type":"Line"},{"attributes":{},"id":"1045","type":"BasicTickFormatter"},{"attributes":{"label":{"value":"improved"},"renderers":[{"id":"1068","type":"GlyphRenderer"}]},"id":"1080","type":"LegendItem"},{"attributes":{"callback":null,"data":{"x":[6,7,8,9,10,11,12,13,14],"y":[7.853127585826701e-05,0.00035685686805868116,0.0016216064604691524,0.007368801746595173,0.03348484389049275,0.15215971455450666,0.6914345728779863,3.1419733532669376,14.277557038475631]},"selected":{"id":"1078","type":"Selection"},"selection_policy":{"id":"1077","type":"UnionRenderers"}},"id":"1051","type":"ColumnDataSource"},{"attributes":{"callback":null,"data":{"x":[6,7,8,9,10,11,12,13,14],"y":[7.062618621281617e-05,0.00031834811244230697,0.0014349567225702621,0.006468079172364345,0.02915491981182376,0.13141603969005852,0.5923588745668601,2.670062475674061,12.035328464042474]},"selected":{"id":"1111","type":"Selection"},"selection_policy":{"id":"1110","type":"UnionRenderers"}},"id":"1081","type":"ColumnDataSource"},{"attributes":{},"id":"1027","type":"ResetTool"},{"attributes":{"source":{"id":"1051","type":"ColumnDataSource"}},"id":"1055","type":"CDSView"},{"attributes":{},"id":"1062","type":"Selection"},{"attributes":{},"id":"1111","type":"Selection"},{"attributes":{"callback":null},"id":"1005","type":"DataRange1d"},{"attributes":{},"id":"1096","type":"Selection"},{"attributes":{"items":[{"id":"1050","type":"LegendItem"},{"id":"1064","type":"LegendItem"},{"id":"1080","type":"LegendItem"},{"id":"1098","type":"LegendItem"}],"plot":{"id":"1003","subtype":"Figure","type":"Plot"}},"id":"1049","type":"Legend"},{"attributes":{"data_source":{"id":"1051","type":"ColumnDataSource"},"glyph":{"id":"1052","type":"Line"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"1053","type":"Line"},"selection_glyph":null,"view":{"id":"1055","type":"CDSView"}},"id":"1054","type":"GlyphRenderer"},{"attributes":{"callback":null},"id":"1007","type":"DataRange1d"},{"attributes":{"dimension":1,"plot":{"id":"1003","subtype":"Figure","type":"Plot"},"ticker":{"id":"1019","type":"LogTicker"}},"id":"1022","type":"Grid"},{"attributes":{"label":{"value":"improved (pred)"},"renderers":[{"id":"1084","type":"GlyphRenderer"}]},"id":"1098","type":"LegendItem"},{"attributes":{"line_color":"#1f77b4","line_width":2,"x":{"field":"x"},"y":{"field":"y"}},"id":"1039","type":"Line"},{"attributes":{},"id":"1011","type":"LogScale"},{"attributes":{"callback":null,"data":{"x":[6,7,8,9,10,11,12,13,14],"y":[0.00011836199000015313,0.00037772341267024347,0.0013884073534972453,0.005691626583333529,0.02631473559999904,0.1277572148571348,0.6717561049999858,3.434624224000004,19.311666048999996]},"selected":{"id":"1062","type":"Selection"},"selection_policy":{"id":"1061","type":"UnionRenderers"}},"id":"1038","type":"ColumnDataSource"},{"attributes":{"source":{"id":"1038","type":"ColumnDataSource"}},"id":"1042","type":"CDSView"},{"attributes":{},"id":"1061","type":"UnionRenderers"},{"attributes":{},"id":"1095","type":"UnionRenderers"},{"attributes":{"line_color":"#aec7e8","x":{"field":"x"},"y":{"field":"y"}},"id":"1052","type":"Line"},{"attributes":{"line_color":"#ff7f0e","line_width":2,"x":{"field":"x"},"y":{"field":"y"}},"id":"1066","type":"Line"},{"attributes":{},"id":"1014","type":"BasicTicker"},{"attributes":{},"id":"1009","type":"LinearScale"},{"attributes":{},"id":"1023","type":"PanTool"},{"attributes":{"line_alpha":0.1,"line_color":"#1f77b4","line_width":2,"x":{"field":"x"},"y":{"field":"y"}},"id":"1067","type":"Line"},{"attributes":{"label":{"value":"init (pred)"},"renderers":[{"id":"1054","type":"GlyphRenderer"}]},"id":"1064","type":"LegendItem"},{"attributes":{"data_source":{"id":"1038","type":"ColumnDataSource"},"glyph":{"id":"1039","type":"Line"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"1040","type":"Line"},"selection_glyph":null,"view":{"id":"1042","type":"CDSView"}},"id":"1041","type":"GlyphRenderer"},{"attributes":{"label":{"value":"init"},"renderers":[{"id":"1041","type":"GlyphRenderer"}]},"id":"1050","type":"LegendItem"},{"attributes":{"callback":null,"data":{"x":[6,7,8,9,10,11,12,13,14],"y":[0.00011666191500012246,0.0003323479562426684,0.0011858636422630298,0.00489790481547643,0.022645984699997256,0.10728769462500054,0.524051921000023,2.898864167000056,18.310328953999942]},"selected":{"id":"1096","type":"Selection"},"selection_policy":{"id":"1095","type":"UnionRenderers"}},"id":"1065","type":"ColumnDataSource"},{"attributes":{"line_alpha":0.1,"line_color":"#1f77b4","line_width":2,"x":{"field":"x"},"y":{"field":"y"}},"id":"1040","type":"Line"},{"attributes":{"data_source":{"id":"1065","type":"ColumnDataSource"},"glyph":{"id":"1066","type":"Line"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"1067","type":"Line"},"selection_glyph":null,"view":{"id":"1069","type":"CDSView"}},"id":"1068","type":"GlyphRenderer"},{"attributes":{"plot":null,"text":"Timings"},"id":"1002","type":"Title"},{"attributes":{"overlay":{"id":"1031","type":"BoxAnnotation"}},"id":"1025","type":"BoxZoomTool"},{"attributes":{"source":{"id":"1081","type":"ColumnDataSource"}},"id":"1085","type":"CDSView"}],"root_ids":["1003"]},"title":"Bokeh Application","version":"1.0.3"}};
-  var render_items = [{"docid":"8d8a5ed3-0490-49fe-a4df-0ebe3e5fa0d9","roots":{"1003":"31c3c16d-04dd-44d7-bab8-8eceb26dab0a"}}];
+  var docs_json = {"2a190df9-e546-4f3d-b34a-9f236210529b":{"roots":{"references":[{"attributes":{"below":[{"id":"1013","type":"LinearAxis"}],"left":[{"id":"1018","type":"LogAxis"}],"renderers":[{"id":"1013","type":"LinearAxis"},{"id":"1017","type":"Grid"},{"id":"1018","type":"LogAxis"},{"id":"1022","type":"Grid"},{"id":"1031","type":"BoxAnnotation"},{"id":"1049","type":"Legend"},{"id":"1041","type":"GlyphRenderer"},{"id":"1054","type":"GlyphRenderer"},{"id":"1068","type":"GlyphRenderer"},{"id":"1084","type":"GlyphRenderer"}],"title":{"id":"1002","type":"Title"},"toolbar":{"id":"1029","type":"Toolbar"},"x_range":{"id":"1005","type":"DataRange1d"},"x_scale":{"id":"1009","type":"LinearScale"},"y_range":{"id":"1007","type":"DataRange1d"},"y_scale":{"id":"1011","type":"LogScale"}},"id":"1003","subtype":"Figure","type":"Plot"},{"attributes":{"overlay":{"id":"1031","type":"BoxAnnotation"}},"id":"1025","type":"BoxZoomTool"},{"attributes":{"data_source":{"id":"1038","type":"ColumnDataSource"},"glyph":{"id":"1039","type":"Line"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"1040","type":"Line"},"selection_glyph":null,"view":{"id":"1042","type":"CDSView"}},"id":"1041","type":"GlyphRenderer"},{"attributes":{"axis_label":"time (sec)","formatter":{"id":"1046","type":"LogTickFormatter"},"plot":{"id":"1003","subtype":"Figure","type":"Plot"},"ticker":{"id":"1019","type":"LogTicker"}},"id":"1018","type":"LogAxis"},{"attributes":{"label":{"value":"improved"},"renderers":[{"id":"1068","type":"GlyphRenderer"}]},"id":"1080","type":"LegendItem"},{"attributes":{"num_minor_ticks":10},"id":"1019","type":"LogTicker"},{"attributes":{},"id":"1009","type":"LinearScale"},{"attributes":{"callback":null},"id":"1007","type":"DataRange1d"},{"attributes":{"line_alpha":0.1,"line_color":"#1f77b4","x":{"field":"x"},"y":{"field":"y"}},"id":"1053","type":"Line"},{"attributes":{},"id":"1014","type":"BasicTicker"},{"attributes":{"callback":null,"data":{"x":[6,7,8,9,10,11,12,13,14],"y":[7.949538746337655e-05,0.00035020379571373524,0.0015427649634239316,0.006796396159892034,0.029940400422162422,0.1318974874845528,0.5810525897930284,2.5597311862724155,11.276472837526669]},"selected":{"id":"1110","type":"Selection"},"selection_policy":{"id":"1111","type":"UnionRenderers"}},"id":"1081","type":"ColumnDataSource"},{"attributes":{"label":{"value":"init (pred)"},"renderers":[{"id":"1054","type":"GlyphRenderer"}]},"id":"1064","type":"LegendItem"},{"attributes":{"line_color":"#ffbb78","x":{"field":"x"},"y":{"field":"y"}},"id":"1082","type":"Line"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"1023","type":"PanTool"},{"id":"1024","type":"WheelZoomTool"},{"id":"1025","type":"BoxZoomTool"},{"id":"1026","type":"SaveTool"},{"id":"1027","type":"ResetTool"},{"id":"1028","type":"HelpTool"}]},"id":"1029","type":"Toolbar"},{"attributes":{"line_alpha":0.1,"line_color":"#1f77b4","x":{"field":"x"},"y":{"field":"y"}},"id":"1083","type":"Line"},{"attributes":{},"id":"1095","type":"Selection"},{"attributes":{},"id":"1011","type":"LogScale"},{"attributes":{"axis_label":"N","formatter":{"id":"1044","type":"BasicTickFormatter"},"plot":{"id":"1003","subtype":"Figure","type":"Plot"},"ticker":{"id":"1014","type":"BasicTicker"}},"id":"1013","type":"LinearAxis"},{"attributes":{},"id":"1027","type":"ResetTool"},{"attributes":{},"id":"1028","type":"HelpTool"},{"attributes":{},"id":"1096","type":"UnionRenderers"},{"attributes":{"callback":null,"data":{"x":[6,7,8,9,10,11,12,13,14],"y":[0.00013303259499998886,0.00037204699999999775,0.0014272634208566271,0.00559689032142856,0.023545135828571314,0.11067528875000043,0.5750090489999877,3.2590456240000094,20.973889629000013]},"selected":{"id":"1061","type":"Selection"},"selection_policy":{"id":"1062","type":"UnionRenderers"}},"id":"1038","type":"ColumnDataSource"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"1031","type":"BoxAnnotation"},{"attributes":{"data_source":{"id":"1081","type":"ColumnDataSource"},"glyph":{"id":"1082","type":"Line"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"1083","type":"Line"},"selection_glyph":null,"view":{"id":"1085","type":"CDSView"}},"id":"1084","type":"GlyphRenderer"},{"attributes":{"source":{"id":"1081","type":"ColumnDataSource"}},"id":"1085","type":"CDSView"},{"attributes":{"callback":null,"data":{"x":[6,7,8,9,10,11,12,13,14],"y":[0.0001335520399999979,0.0003487747027388082,0.001390053211169284,0.005371302860139864,0.021471241027026775,0.09964661899999941,0.5161720629999991,2.7959381390000004,18.004045449000003]},"selected":{"id":"1095","type":"Selection"},"selection_policy":{"id":"1096","type":"UnionRenderers"}},"id":"1065","type":"ColumnDataSource"},{"attributes":{"line_alpha":0.1,"line_color":"#1f77b4","line_width":2,"x":{"field":"x"},"y":{"field":"y"}},"id":"1067","type":"Line"},{"attributes":{"source":{"id":"1051","type":"ColumnDataSource"}},"id":"1055","type":"CDSView"},{"attributes":{},"id":"1077","type":"Selection"},{"attributes":{},"id":"1110","type":"Selection"},{"attributes":{},"id":"1044","type":"BasicTickFormatter"},{"attributes":{},"id":"1078","type":"UnionRenderers"},{"attributes":{"line_color":"#ff7f0e","line_width":2,"x":{"field":"x"},"y":{"field":"y"}},"id":"1066","type":"Line"},{"attributes":{"data_source":{"id":"1065","type":"ColumnDataSource"},"glyph":{"id":"1066","type":"Line"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"1067","type":"Line"},"selection_glyph":null,"view":{"id":"1069","type":"CDSView"}},"id":"1068","type":"GlyphRenderer"},{"attributes":{},"id":"1062","type":"UnionRenderers"},{"attributes":{"line_alpha":0.1,"line_color":"#1f77b4","line_width":2,"x":{"field":"x"},"y":{"field":"y"}},"id":"1040","type":"Line"},{"attributes":{},"id":"1111","type":"UnionRenderers"},{"attributes":{"data_source":{"id":"1051","type":"ColumnDataSource"},"glyph":{"id":"1052","type":"Line"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"1053","type":"Line"},"selection_glyph":null,"view":{"id":"1055","type":"CDSView"}},"id":"1054","type":"GlyphRenderer"},{"attributes":{},"id":"1061","type":"Selection"},{"attributes":{"dimension":1,"plot":{"id":"1003","subtype":"Figure","type":"Plot"},"ticker":{"id":"1019","type":"LogTicker"}},"id":"1022","type":"Grid"},{"attributes":{"line_color":"#aec7e8","x":{"field":"x"},"y":{"field":"y"}},"id":"1052","type":"Line"},{"attributes":{"ticker":null},"id":"1046","type":"LogTickFormatter"},{"attributes":{"items":[{"id":"1050","type":"LegendItem"},{"id":"1064","type":"LegendItem"},{"id":"1080","type":"LegendItem"},{"id":"1098","type":"LegendItem"}],"plot":{"id":"1003","subtype":"Figure","type":"Plot"}},"id":"1049","type":"Legend"},{"attributes":{"callback":null},"id":"1005","type":"DataRange1d"},{"attributes":{"callback":null,"data":{"x":[6,7,8,9,10,11,12,13,14],"y":[8.009643856324749e-05,0.00035949538084615695,0.0016135165454038579,0.007241916811738169,0.032503762826311164,0.1458860444456714,0.6547776661345921,2.9388266279872,13.190281825512573]},"selected":{"id":"1077","type":"Selection"},"selection_policy":{"id":"1078","type":"UnionRenderers"}},"id":"1051","type":"ColumnDataSource"},{"attributes":{},"id":"1023","type":"PanTool"},{"attributes":{"label":{"value":"improved (pred)"},"renderers":[{"id":"1084","type":"GlyphRenderer"}]},"id":"1098","type":"LegendItem"},{"attributes":{},"id":"1026","type":"SaveTool"},{"attributes":{"label":{"value":"init"},"renderers":[{"id":"1041","type":"GlyphRenderer"}]},"id":"1050","type":"LegendItem"},{"attributes":{"source":{"id":"1038","type":"ColumnDataSource"}},"id":"1042","type":"CDSView"},{"attributes":{"line_color":"#1f77b4","line_width":2,"x":{"field":"x"},"y":{"field":"y"}},"id":"1039","type":"Line"},{"attributes":{"source":{"id":"1065","type":"ColumnDataSource"}},"id":"1069","type":"CDSView"},{"attributes":{"plot":{"id":"1003","subtype":"Figure","type":"Plot"},"ticker":{"id":"1014","type":"BasicTicker"}},"id":"1017","type":"Grid"},{"attributes":{"plot":null,"text":"Timings"},"id":"1002","type":"Title"},{"attributes":{},"id":"1024","type":"WheelZoomTool"}],"root_ids":["1003"]},"title":"Bokeh Application","version":"1.0.3"}};
+  var render_items = [{"docid":"2a190df9-e546-4f3d-b34a-9f236210529b","roots":{"1003":"8c42af49-e392-4310-8a86-8fb11b4f0804"}}];
   root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
 
   }
