@@ -181,59 +181,129 @@ improved_bitwise(8)
 
 
 
+### Naive Recursive Backtracking solution
 
-```python
-time1 = timings(initial_bitwise)
-n, y = zip(*time1)
-pred1 = expfit(n, y)
-```
-
-    exp(a): 4.488282
-    b: -18.441098792533825
-     6: 0.000133  pred: 0.000080
-     7: 0.000372  pred: 0.000359
-     8: 0.001427  pred: 0.001614
-     9: 0.005597  pred: 0.007242
-    10: 0.023545  pred: 0.032504
-    11: 0.110675  pred: 0.145886
-    12: 0.575009  pred: 0.654778
-    13: 3.259046  pred: 2.938827
-    14: 20.973890  pred: 13.190282
-
+The naive backtracking solution below is trying to place a queen into the next cell and backtracks if it reaches a cell where a queen could not be placed.
 
 
 ```python
-time2 = timings(improved_bitwise)
-n, y = zip(*time2)
-pred2 = expfit(n, y)
+def naive_backtracking(n):
+    count = 0
+
+    def is_safe(grid, row, column):
+        nonlocal n
+
+        # check column
+        for i in range(column):
+            if grid[row][i] == 1:
+                return False
+        
+        # check main diagonal
+        for i, j in zip(range(row, -1, -1), range(column, -1, -1)):
+            if grid[i][j] == 1:
+                return False
+        
+        # check the other diagonal
+        for i, j in zip(range(row, n, 1), range(column, -1, -1)): 
+            if grid[i][j] == 1:
+                return False
+        
+        return True
+     
+    def solve(grid, column):
+        nonlocal count, n
+
+        if column >= n:
+            count += 1
+            return
+
+        for row in range(n):
+            if is_safe(grid, row, column):
+                grid[row][column] = 1
+                solve(grid, column + 1)
+                grid[row][column] = 0  # backtrack
+
+    solve([[0 for _ in range(n)] 
+            for _ in range(n)], 0)
+
+    return count
+        
 ```
-
-    exp(a): 4.405335
-    b: -18.336709104399876
-     6: 0.000134  pred: 0.000079
-     7: 0.000349  pred: 0.000350
-     8: 0.001390  pred: 0.001543
-     9: 0.005371  pred: 0.006796
-    10: 0.021471  pred: 0.029940
-    11: 0.099647  pred: 0.131897
-    12: 0.516172  pred: 0.581053
-    13: 2.795938  pred: 2.559731
-    14: 18.004045  pred: 11.276473
-
 
 
 ```python
-plot_timings(('init', pred1), ('improved', pred2))
+naive_backtracking(8)
 ```
 
 
 
 
+    92
+
+
+
+### Timing & Comparing Solutions
+
+
+```python
+def get_prediction(solution_function):
+    timing = timings(solution_function)
+    n, y = zip(*timing)
+    prediction = expfit(n, y)
+    
+    return prediction
+
+solution_stats = [
+    ('initial_bitwise', get_prediction(initial_bitwise)),
+    ('improved_bitwise', get_prediction(improved_bitwise)),
+    ('naive_backtracking', get_prediction(naive_backtracking)),
+]
+
+plot_timings(*solution_stats)
+```
+
+    exp(a): 4.487739
+    b: -18.39745518192311
+     6: 0.000133  pred: 0.000084
+     7: 0.000367  pred: 0.000375
+     8: 0.001441  pred: 0.001684
+     9: 0.006457  pred: 0.007557
+    10: 0.025238  pred: 0.033913
+    11: 0.122780  pred: 0.152191
+    12: 0.654845  pred: 0.682996
+    13: 3.310788  pred: 3.065107
+    14: 19.458893  pred: 13.755399
+    exp(a): 4.348136
+    b: -18.197222372798155
+     6: 0.000163  pred: 0.000085
+     7: 0.000382  pred: 0.000367
+     8: 0.001215  pred: 0.001598
+     9: 0.005031  pred: 0.006947
+    10: 0.021020  pred: 0.030205
+    11: 0.099535  pred: 0.131335
+    12: 0.534238  pred: 0.571063
+    13: 2.898462  pred: 2.483059
+    14: 16.997789  pred: 10.796676
+    exp(a): 4.933698
+    b: -16.700349101245656
+     6: 0.001028  pred: 0.000806
+     7: 0.004012  pred: 0.003975
+     8: 0.017485  pred: 0.019612
+     9: 0.082842  pred: 0.096757
+    10: 0.397435  pred: 0.477371
+    11: 2.321300  pred: 2.355205
+    12: 11.770283  pred: 11.619869
+    13: 70.167350  pred: 57.328922
 
 
 
 
-  <div class="bk-root" id="8c42af49-e392-4310-8a86-8fb11b4f0804" data-root-id="1003"></div>
+
+
+
+
+
+  <div class="bk-root" id="8e6ec7a4-92a5-4813-a6e2-503c1f3dc0d3" data-root-id="1307"></div>
 
 
 
