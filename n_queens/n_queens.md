@@ -141,6 +141,8 @@ initial_bitwise(8)
 
 
 
+### Applying micro-optimizations to the bitwise solution 
+
 
 ```python
 # applying a few suggestions from the codereview.SE
@@ -172,6 +174,55 @@ def improved_bitwise(n):
 
 ```python
 improved_bitwise(8)
+```
+
+
+
+
+    92
+
+
+
+### Taking into account symmetry
+
+
+```python
+# applying symmetry rules from http://liujoycec.github.io/2015/09/20/n_queens_symmetry/
+def symmetrical_bitwise(n):
+    count = 0
+
+    all_ones = 2 ** n - 1
+    excl = (1 << ((n // 2) ^ 0)) - 1
+
+    def helper(ld, column, rd, exclusion1, exclusion2):
+        nonlocal count
+        
+        if column == all_ones:  # filled out all vacant positions
+            count += 1
+            return count
+        
+        possible_slots = ~(ld | column | rd | exclusion1) & all_ones  # mark possible vacant slots as 1s
+        while possible_slots:
+            current_bit = possible_slots & -possible_slots  # get first 1 from the right
+            possible_slots -= current_bit  # occupy a slot
+
+            helper((ld | current_bit) >> 1,
+                   column | current_bit,
+                   (rd | current_bit) << 1, 
+                   exclusion2, 0)
+            
+            exclusion2 = 0
+        return count
+
+    helper(0, 0, 0, excl, excl if n % 2 != 0 else 0)
+    return count << 1  # multiple by 2
+
+
+```
+
+
+```python
+symmetrical_bitwise(8)
 ```
 
 
@@ -256,44 +307,57 @@ def get_prediction(solution_function):
 solution_stats = [
     ('initial_bitwise', get_prediction(initial_bitwise)),
     ('improved_bitwise', get_prediction(improved_bitwise)),
+    ('symmetrical_bitwise', get_prediction(symmetrical_bitwise)),
     ('naive_backtracking', get_prediction(naive_backtracking)),
 ]
 
 plot_timings(*solution_stats)
 ```
 
-    exp(a): 4.487739
-    b: -18.39745518192311
-     6: 0.000133  pred: 0.000084
-     7: 0.000367  pred: 0.000375
-     8: 0.001441  pred: 0.001684
-     9: 0.006457  pred: 0.007557
-    10: 0.025238  pred: 0.033913
-    11: 0.122780  pred: 0.152191
-    12: 0.654845  pred: 0.682996
-    13: 3.310788  pred: 3.065107
-    14: 19.458893  pred: 13.755399
-    exp(a): 4.348136
-    b: -18.197222372798155
-     6: 0.000163  pred: 0.000085
-     7: 0.000382  pred: 0.000367
-     8: 0.001215  pred: 0.001598
-     9: 0.005031  pred: 0.006947
-    10: 0.021020  pred: 0.030205
-    11: 0.099535  pred: 0.131335
-    12: 0.534238  pred: 0.571063
-    13: 2.898462  pred: 2.483059
-    14: 16.997789  pred: 10.796676
-    exp(a): 4.933698
-    b: -16.700349101245656
-     6: 0.001028  pred: 0.000806
-     7: 0.004012  pred: 0.003975
-     8: 0.017485  pred: 0.019612
-     9: 0.082842  pred: 0.096757
-    10: 0.397435  pred: 0.477371
-    11: 2.321300  pred: 2.355205
-    12: 11.770283  pred: 11.619869
-    13: 70.167350  pred: 57.328922
+    exp(a): 4.391659
+    b: -18.184849973855453
+     6: 0.000157  pred: 0.000091
+     7: 0.000405  pred: 0.000399
+     8: 0.001539  pred: 0.001752
+     9: 0.005643  pred: 0.007693
+    10: 0.024112  pred: 0.033784
+    11: 0.112601  pred: 0.148366
+    12: 0.608971  pred: 0.651573
+    13: 3.253075  pred: 2.861486
+    14: 19.240542  pred: 12.566671
+    exp(a): 4.541559
+    b: -18.714324863688983
+     6: 0.000099  pred: 0.000065
+     7: 0.000323  pred: 0.000297
+     8: 0.001202  pred: 0.001349
+     9: 0.004833  pred: 0.006128
+    10: 0.020763  pred: 0.027831
+    11: 0.099640  pred: 0.126394
+    12: 0.522003  pred: 0.574025
+    13: 2.862201  pred: 2.606970
+    14: 17.527311  pred: 11.839707
+    exp(a): 4.680685
+    b: -19.55979025823651
+     6: 0.000055  pred: 0.000034
+     7: 0.000187  pred: 0.000158
+     8: 0.000667  pred: 0.000738
+     9: 0.002652  pred: 0.003452
+    10: 0.011679  pred: 0.016158
+    11: 0.056178  pred: 0.075630
+    12: 0.285452  pred: 0.354000
+    13: 1.541813  pred: 1.656964
+    14: 9.115338  pred: 7.755727
+    15: 57.293671  pred: 36.302115
+    exp(a): 4.929414
+    b: -16.638256938529608
+     6: 0.001076  pred: 0.000853
+     7: 0.004270  pred: 0.004204
+     8: 0.018441  pred: 0.020723
+     9: 0.091175  pred: 0.102154
+    10: 0.438885  pred: 0.503558
+    11: 2.166934  pred: 2.482247
+    12: 12.259621  pred: 12.236023
+    13: 77.742206  pred: 60.316422
 
 
 
@@ -303,8 +367,13 @@ plot_timings(*solution_stats)
 
 
 
-  <div class="bk-root" id="8e6ec7a4-92a5-4813-a6e2-503c1f3dc0d3" data-root-id="1307"></div>
+  <div class="bk-root" id="9c1c8a88-5974-4ba2-ac9f-6be97421a6a7" data-root-id="1003"></div>
 
 
 
 
+
+
+```python
+
+```
